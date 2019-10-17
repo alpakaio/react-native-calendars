@@ -10,8 +10,8 @@ export default function styleConstructor(theme = {}) {
       flexDirection: 'row'
     },
     dayNum: {
-      fontSize: 28,
-      fontWeight: '200',
+      fontSize: appStyle.agendaDayFontSize,
+      fontWeight: appStyle.agendaDayFontWeight,
       fontFamily: appStyle.textDayFontFamily,
       color: appStyle.agendaDayNumColor
     },

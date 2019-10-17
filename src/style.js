@@ -49,6 +49,8 @@ export const monthTextColor = textDefaultColor;
 export const indicatorColor = undefined; // use the default color of React Native ActivityIndicator
 export const agendaDayTextColor = '#7a92a5';
 export const agendaDayNumColor = '#7a92a5';
+export const agendaDayFontSize = 28;
+export const agendaDayFontWeight = '200';
 export const agendaTodayColor = textLinkColor;
 export const agendaKnobColor = Platform.OS === 'ios' ? '#f2F4f5' : '#4ac4f7';
 export const todayButtonTextColor = textLinkColor;
