@@ -216,14 +216,19 @@ export default class AgendaView extends Component {
     this._isMounted = false;
   }
 
-  componentDidUpdate(props) {
-	if (this.props !== props)
-      if (props.items) {
-        this.setState({
-          firstResevationLoad: false
-        });
+  componentDidUpdate(nextProps) {
+	if (this.props !== nextProps) {
+	  const nextState = {};
+	  if (nextProps.items) {
+        nextState.firstResevationLoad = false;
+	  }
+	  if (nextProps.selected && !dateutils.sameDate(nextProps.selected, this.props.selected)) {
+		nextState.selectedDay = parseDate(nextProps.selected);
+	  }
+      if (Object.keys(nextState).length) {
+		this.setState(nextState);
       } else {
-        this.loadReservations(props);
+        this.loadReservations(nextProps);
 	  }
     }
   }
