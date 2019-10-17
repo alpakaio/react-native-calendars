@@ -47,7 +47,9 @@ class CalendarList extends Component {
     /** Style for the List item (the calendar) */
     calendarStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.number, PropTypes.array]),
     /** Whether to use static header that will not scroll with the list (horizontal only) */
-    staticHeader: PropTypes.bool
+	staticHeader: PropTypes.bool,
+	onEndReachedThreshold: PropTypes.func,
+	onEndReached: PropTypes.func
   }
 
   static defaultProps = {
@@ -311,7 +313,9 @@ class CalendarList extends Component {
           keyExtractor={(item, index) => String(index)}
           initialScrollIndex={this.state.openDate ? this.getMonthIndex(this.state.openDate) : false}
           getItemLayout={this.getItemLayout}
-          scrollsToTop={this.props.scrollsToTop}
+		  scrollsToTop={this.props.scrollsToTop}
+		  onEndReachedThreshold={this.props.onEndReachedThreshold}
+          onEndReached={this.props.onEndReached}
         />
         {this.renderStaticHeader()}
 	  </React.Fragment>
