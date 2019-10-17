@@ -26,7 +26,10 @@ class Day extends Component {
   }
 
   onDayPress() {
-    this.props.onPress(this.props.date);
+	const marking = this.props.marking || {};
+	if (!marking.disableTouchEvent) {
+	  this.props.onPress(this.props.date);
+	}
   }
 
   shouldComponentUpdate(nextProps) {

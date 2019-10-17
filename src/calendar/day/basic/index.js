@@ -32,10 +32,16 @@ class Day extends Component {
   }
 
   onDayPress() {
-    this.props.onPress(this.props.date);
+	const marking = this.props.marking || {};
+	if (!marking.disableTouchEvent) {
+	  this.props.onPress(this.props.date);
+	}
   }
   onDayLongPress() {
-    this.props.onLongPress(this.props.date);
+	const marking = this.props.marking || {};
+	if (!marking.disableTouchEvent) {
+	  this.props.onLongPress(this.props.date);
+	}
   }
 
   shouldComponentUpdate(nextProps) {
