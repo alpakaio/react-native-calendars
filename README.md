@@ -1,5 +1,7 @@
-**LOOKING FOR A MAINTAINER** <br>
-We love this project, but currently we don’t have enough time to work on it. So we are looking for a maintainer. If you have enough time and knowledge and want to become one - please let us know (levv@wix.com, inbalti@wix.com, ethans@wix.com)
+**PRIVATE FORK** <br>
+This fork is a custom build with some select PR's merged from the original source. It also includes custom code used in our products. This
+was due to the upstream project not being maintained. This project will be destroyed if (a) the upstream becomes active again or (b) we no
+longer have use for it due to the creation of our own implementation.
 
 ---
 
