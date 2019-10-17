@@ -80,6 +80,16 @@ class Calendar extends Component {
     headerStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.number, PropTypes.array])
   };
 
+  static getDerivedStateFromProps(props, state) {
+    const current = parseDate(props.current);
+    if (current && current.toString('yyyy MM') !== state.currentMonth.toString('yyyy MM')) {
+        return {
+          currentMonth: current.clone(),
+        };
+	}
+	return null;
+  }
+
   constructor(props) {
     super(props);
     
@@ -94,17 +104,6 @@ class Calendar extends Component {
     this.pressDay = this.pressDay.bind(this);
     this.longPressDay = this.longPressDay.bind(this);
     this.shouldComponentUpdate = shouldComponentUpdate;
-  }
-
-  componentDidUpdate(nextProps) {
-	if (this.props !== nextProps) {
-      const current = parseDate(nextProps.current);
-      if (current && current.toString('yyyy MM') !== this.state.currentMonth.toString('yyyy MM')) {
-        this.setState({
-          currentMonth: current.clone()
-        });
-	  }
-    }
   }
 
   updateMonth(day, doNotTriggerListeners) {
