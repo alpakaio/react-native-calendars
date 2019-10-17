@@ -22,16 +22,16 @@
   "author": "Wix.com",
   "license": "MIT",
   "dependencies": {
-    "lodash": "^4.0.0",
-    "prop-types": "^15.5.10",
-    "xdate": "^0.8.0"
+    "lodash": "^4.17.15",
+    "prop-types": "^15.7.2",
+    "xdate": "^0.8.2"
   },
   "devDependencies": {
-    "babel-eslint": "^7.2.3",
-    "eslint": "^6.1.0",
-    "eslint-plugin-react": "^7.0.0",
-    "jasmine": "^2.5.2",
-    "semver": "5.x.x",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.5.1",
+    "eslint-plugin-react": "^7.16.0",
+    "jasmine": "^3.5.0",
+    "semver": "6.x.x",
     "shell-utils": "1.x.x",
     "react": "16.8.3",
     "react-native": "0.59.3",
