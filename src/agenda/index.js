@@ -81,8 +81,10 @@ export default class AgendaView extends Component {
     onRefresh: PropTypes.func,
     /** Set this true while waiting for new data from a refresh. */
     refreshing: PropTypes.bool,
-    /** Display loading indicador. Default = false */
-    displayLoadingIndicator: PropTypes.bool
+	/** Display loading indicador. Default = false */
+	displayLoadingIndicator: PropTypes.bool,
+	/** Specify a default accessibilityHint for all day components. Default = undefined */
+	dayAccessibilityHint: PropTypes.string
   };
 
   constructor(props) {
@@ -421,7 +423,8 @@ export default class AgendaView extends Component {
               current={this.currentMonth}
               markedDates={this.generateMarkings()}
               markingType={this.props.markingType}
-              removeClippedSubviews={this.props.removeClippedSubviews}
+			  removeClippedSubviews={this.props.removeClippedSubviews}
+			  dayAccessibilityHint={this.props.dayAccessibilityHint}
               onDayPress={this._chooseDayFromCalendar.bind(this)}
               scrollingEnabled={this.state.calendarScrollable}
               hideExtraDays={this.state.calendarScrollable}

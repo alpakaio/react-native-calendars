@@ -130,7 +130,8 @@ class Week extends Component {
     return (
       <View style={{flex: 1, alignItems: 'center'}} key={id}>
         <DayComp
-          testID={`${SELECT_DATE_SLOT}-${dateAsObject.dateString}`}
+		  testID={`${SELECT_DATE_SLOT}-${dateAsObject.dateString}`}
+		  accessibilityHint={this.props.dayAccessibilityHint}
           state={state}
           theme={this.props.theme}
           onPress={this.props.onDayPress}
